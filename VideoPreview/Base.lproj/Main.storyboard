@@ -694,11 +694,23 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xNS-qn-cO6"/>
                             </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xrg-lh-CPt">
+                                <rect key="frame" x="380" y="-7" width="106" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="hbB-JN-kRL"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Toggle Mask" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vs6-bv-03w">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5LW-es-jgN" secondAttribute="trailing" id="5hc-sI-ecT"/>
                             <constraint firstItem="5LW-es-jgN" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="6Ae-iE-4y6"/>
+                            <constraint firstItem="5LW-es-jgN" firstAttribute="bottom" secondItem="xrg-lh-CPt" secondAttribute="bottom" id="aMT-fE-FIO"/>
                             <constraint firstItem="5LW-es-jgN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ahB-ff-DPK"/>
+                            <constraint firstItem="5LW-es-jgN" firstAttribute="trailing" secondItem="xrg-lh-CPt" secondAttribute="trailing" id="mWJ-bB-B3W"/>
                             <constraint firstAttribute="bottom" secondItem="5LW-es-jgN" secondAttribute="bottom" id="uTH-Rg-Ofw"/>
                         </constraints>
                     </view>
