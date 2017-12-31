@@ -66,7 +66,8 @@ class ViewController: NSViewController {
             myView.wantsLayer = false // only if button is pressed later
             
             //set mask
-            let mask = NSImage(byReferencingFile: "/Users/andreas/Movies/0_mask/horseSampleShotMask.png")
+            let moviesPath = NSSearchPathForDirectoriesInDomains(.moviesDirectory, .userDomainMask, true)[0]
+            let mask = NSImage(byReferencingFile: moviesPath + "/0_mask/horseSampleShotMask.png")
             imageView.image = mask
             imageView.alphaValue = 0.5
 
