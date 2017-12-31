@@ -12,6 +12,8 @@ import AVKit
 
 class ViewController: NSViewController {
     
+    
+    
     @IBOutlet var myView: NSView!
     @IBOutlet weak var imageView: NSImageView!
     
@@ -26,7 +28,9 @@ class ViewController: NSViewController {
     @IBAction func togglePreviewButton(_ sender: NSButton) {
         if (myView.wantsLayer == true) {
             myView.wantsLayer = false
+            session.stopRunning()
         } else {
+            session.startRunning()
             myView.wantsLayer = true
         }
     }
@@ -58,17 +62,12 @@ class ViewController: NSViewController {
             
             let previewLayer = AVCaptureVideoPreviewLayer(session: session)
             previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-            
             myView.layer = previewLayer!
-            myView.wantsLayer = false
+            myView.wantsLayer = false // only if button is pressed later
             
-            
-            session.startRunning()
-            
+            //set mask
             let mask = NSImage(byReferencingFile: "/Users/andreas/Movies/0_mask/horseSampleShotMask.png")
-            
             imageView.image = mask
-            
             imageView.alphaValue = 0.5
 
             
