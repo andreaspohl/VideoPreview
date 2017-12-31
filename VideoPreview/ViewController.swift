@@ -15,6 +15,13 @@ class ViewController: NSViewController {
     @IBOutlet var myView: NSView!
     @IBOutlet weak var imageView: NSImageView!
     
+    @IBAction func toggleMaskButton(_ sender: NSButton) {
+        if (imageView.alphaValue == 0.5) {
+            imageView.alphaValue = 0.0
+        } else {
+            imageView.alphaValue = 0.5
+        }
+    }
     
     let session = AVCaptureSession()
     let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
