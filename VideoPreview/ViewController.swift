@@ -48,20 +48,6 @@ class ViewController: NSViewController {
                 session.addInput(deviceInput)
             }
             
-/*
-            let captureOutput = AVCaptureVideoDataOutput()
-            
-            captureOutput.alwaysDiscardsLateVideoFrames = true
-            
-            let queue = DispatchQueue(label: "videoQueue")
-            
-            captureOutput.setSampleBufferDelegate(self, queue: queue)
-            
-            if (session.canAddOutput(captureOutput)) {
-                session.addOutput(captureOutput)
-            }
- */
-            
             let previewLayer = AVCaptureVideoPreviewLayer(session: session)
             previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             
@@ -94,11 +80,4 @@ class ViewController: NSViewController {
     
 }
 
-extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
-    
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
-        //add code here
-    }
-    
-}
 
