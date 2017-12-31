@@ -23,6 +23,14 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func togglePreviewButton(_ sender: NSButton) {
+        if (myView.wantsLayer == true) {
+            myView.wantsLayer = false
+        } else {
+            myView.wantsLayer = true
+        }
+    }
+    
     let session = AVCaptureSession()
     let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     
@@ -52,7 +60,7 @@ class ViewController: NSViewController {
             previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             
             myView.layer = previewLayer!
-            myView.wantsLayer = true
+            myView.wantsLayer = false
             
             
             session.startRunning()

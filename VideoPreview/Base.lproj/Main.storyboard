@@ -707,12 +707,27 @@
                                     <action selector="toggleMaskButton:" target="XfG-lQ-9wD" id="maN-jk-zf9"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hbD-ct-gTE">
+                                <rect key="frame" x="-6" y="-7" width="126" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="2gF-3y-JIi"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Toggle Preview" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GdY-Ch-hez">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="togglePreviewButton:" target="XfG-lQ-9wD" id="tYZ-kL-hSN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5LW-es-jgN" secondAttribute="trailing" id="5hc-sI-ecT"/>
                             <constraint firstItem="5LW-es-jgN" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="6Ae-iE-4y6"/>
+                            <constraint firstItem="hbD-ct-gTE" firstAttribute="baseline" secondItem="xrg-lh-CPt" secondAttribute="baseline" id="PUt-YH-nBM"/>
                             <constraint firstItem="5LW-es-jgN" firstAttribute="bottom" secondItem="xrg-lh-CPt" secondAttribute="bottom" id="aMT-fE-FIO"/>
                             <constraint firstItem="5LW-es-jgN" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ahB-ff-DPK"/>
+                            <constraint firstItem="hbD-ct-gTE" firstAttribute="leading" secondItem="5LW-es-jgN" secondAttribute="leading" id="kIG-FI-h68"/>
                             <constraint firstItem="5LW-es-jgN" firstAttribute="trailing" secondItem="xrg-lh-CPt" secondAttribute="trailing" id="mWJ-bB-B3W"/>
                             <constraint firstAttribute="bottom" secondItem="5LW-es-jgN" secondAttribute="bottom" id="uTH-Rg-Ofw"/>
                         </constraints>
