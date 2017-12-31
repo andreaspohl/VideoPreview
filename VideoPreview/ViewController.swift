@@ -24,7 +24,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         do {
             
-            session.sessionPreset = AVCaptureSessionPresetLow
+            session.sessionPreset = AVCaptureSessionPresetHigh
             
             try device?.lockForConfiguration()
             
