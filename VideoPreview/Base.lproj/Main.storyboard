@@ -685,8 +685,16 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5LW-es-jgN">
+                                <rect key="frame" x="272" y="78" width="188" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xNS-qn-cO6"/>
+                            </imageView>
+                        </subviews>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="5LW-es-jgN" id="Omr-QW-nzg"/>
                         <outlet property="myView" destination="m2S-Jp-Qdl" id="v8p-OT-ZZZ"/>
                     </connections>
                 </viewController>

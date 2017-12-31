@@ -13,6 +13,7 @@ import AVKit
 class ViewController: NSViewController {
     
     @IBOutlet var myView: NSView!
+    @IBOutlet weak var imageView: NSImageView!
     
     
     let session = AVCaptureSession()
@@ -40,6 +41,7 @@ class ViewController: NSViewController {
                 session.addInput(deviceInput)
             }
             
+/*
             let captureOutput = AVCaptureVideoDataOutput()
             
             captureOutput.alwaysDiscardsLateVideoFrames = true
@@ -51,6 +53,7 @@ class ViewController: NSViewController {
             if (session.canAddOutput(captureOutput)) {
                 session.addOutput(captureOutput)
             }
+ */
             
             let previewLayer = AVCaptureVideoPreviewLayer(session: session)
             previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
@@ -60,6 +63,12 @@ class ViewController: NSViewController {
             
             
             session.startRunning()
+            
+            let mask = NSImage(byReferencingFile: "/Users/andreas/Movies/0_mask/horseSampleShotMask.png")
+            
+            imageView.image = mask
+            
+            imageView.alphaValue = 0.5
 
             
         }
