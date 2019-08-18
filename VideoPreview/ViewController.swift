@@ -36,7 +36,8 @@ class ViewController: NSViewController {
     }
     
     let session = AVCaptureSession()
-    let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+    let device = AVCaptureDevice.default(for: AVMediaType.video)
+    //let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,25 +45,25 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         do {
             
-            session.sessionPreset = AVCaptureSessionPresetHigh
+            session.sessionPreset = AVCaptureSession.Preset.high
             
             try device?.lockForConfiguration()
             
-            device?.focusMode = AVCaptureFocusMode.continuousAutoFocus
-            device?.exposureMode = AVCaptureExposureMode.continuousAutoExposure
+            device?.focusMode = AVCaptureDevice.FocusMode.continuousAutoFocus
+            device?.exposureMode = AVCaptureDevice.ExposureMode.continuousAutoExposure
             //device?.whiteBalanceMode = AVCaptureWhiteBalanceMode.continuousAutoWhiteBalance
             
             device?.unlockForConfiguration()
             
-            let deviceInput = try AVCaptureDeviceInput(device: device)
+            let deviceInput = try AVCaptureDeviceInput(device: device!)
             
             if (session.canAddInput(deviceInput)) {
                 session.addInput(deviceInput)
             }
             
             let previewLayer = AVCaptureVideoPreviewLayer(session: session)
-            previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-            myView.layer = previewLayer!
+            previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            myView.layer = previewLayer
             myView.wantsLayer = false // only if button is pressed later
             
             //set mask

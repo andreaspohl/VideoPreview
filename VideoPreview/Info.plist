@@ -28,5 +28,7 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSCameraUsageDescription</key>
+	<string>VideoPreview requires to access camera for adjusting the camera position.</string>
 </dict>
 </plist>
